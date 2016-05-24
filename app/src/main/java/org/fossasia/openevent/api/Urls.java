@@ -29,7 +29,7 @@ public abstract class Urls {
 
     public static final String MAP = "map";
 
-    public static final String BASE_URL = "http://springboard.championswimmer.in";
+    public static final String BASE_URL = "https://raw.githubusercontent.com/fossasia/open-event/master/otsJson/";
 
     public static final String BASE_GET_URL = BASE_URL + "/api/" + API_VERSION;
 

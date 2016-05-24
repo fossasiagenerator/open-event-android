@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import org.fossasia.openevent.R;
 import org.osmdroid.DefaultResourceProxyImpl;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
@@ -74,6 +75,7 @@ public class OSMapFragment extends Fragment {
         GeoPoint geoPoint = new GeoPoint(DESTINATION_LATITUDE, DESTINATION_LONGITUDE);
         mapView.getController().setCenter(geoPoint);
         mapView.getController().setZoom(15);
+        mapView.setTileSource(TileSourceFactory.MAPNIK);
         OverlayItem position = new OverlayItem(DESTINATION_NAME, "Location", geoPoint);
 
         ArrayList<OverlayItem> items = new ArrayList<>();
@@ -109,7 +111,6 @@ public class OSMapFragment extends Fragment {
                     Snackbar.make(rootView.findViewById(R.id.map), "Insufficient Permissions!", Snackbar.LENGTH_LONG)
                             .show();
                 }
-                return;
             }
         }
     }

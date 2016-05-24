@@ -351,6 +351,7 @@ public class MainActivity extends BaseActivity {
         if (event.isState()) {
             eventsDone++;
             Timber.tag(COUNTER_TAG).d(eventsDone + " " + counter);
+            Timber.tag("bmc").d("Tracks");
             if (counter == eventsDone) {
                 syncComplete();
             }
@@ -364,6 +365,8 @@ public class MainActivity extends BaseActivity {
         if (event.isState()) {
             eventsDone++;
             Timber.tag(COUNTER_TAG).d(eventsDone + " " + counter);
+            Timber.tag("bmc").d("sponsor");
+
             if (counter == eventsDone) {
                 syncComplete();
             }
@@ -378,6 +381,8 @@ public class MainActivity extends BaseActivity {
         if (event.isState()) {
             eventsDone++;
             Timber.tag(COUNTER_TAG).d(eventsDone + " " + counter);
+            Timber.tag("bmc").d("speaker");
+
             if (counter == eventsDone) {
                 syncComplete();
             }
@@ -392,6 +397,8 @@ public class MainActivity extends BaseActivity {
         if (event.isState()) {
             eventsDone++;
             Timber.tag(COUNTER_TAG).d(eventsDone + " " + counter);
+            Timber.tag("bmc").d("session");
+
             if (counter == eventsDone) {
                 syncComplete();
             }
@@ -425,6 +432,8 @@ public class MainActivity extends BaseActivity {
         if (event.isState()) {
             eventsDone++;
             Timber.tag(COUNTER_TAG).d(eventsDone + " " + counter);
+            Timber.tag("bmc").d("micro");
+
             if (counter == eventsDone) {
                 syncComplete();
             }

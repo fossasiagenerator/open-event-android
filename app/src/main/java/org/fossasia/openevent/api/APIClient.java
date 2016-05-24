@@ -35,7 +35,7 @@ public final class APIClient {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Urls.BASE_GET_URL_ALT)
+                .baseUrl(Urls.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();

@@ -26,16 +26,29 @@ public class SessionListResponseProcessor implements Callback<SessionResponseLis
 
     @Override
     public void onResponse(Call<SessionResponseList> call, final Response<SessionResponseList> response) {
+        Log.d(TAG,"run  ");
+
         if (response.isSuccessful()) {
+            Log.d(TAG,"run  ");
+
             CommonTaskLoop.getInstance().post(new Runnable() {
 
                 @Override
                 public void run() {
+                    Log.d(TAG,"run " + response.body().sessions.size());
+
                     ArrayList<String> queries = new ArrayList<String>();
+                    if(response.body().sessions == null){
+                        Log.d(TAG,"Null");
+
+                    }
+                    int count = 0;
                     for (Session session : response.body().sessions) {
+                        session.setId(count);
                         String query = session.generateSql();
                         queries.add(query);
-                        Log.d(TAG, query);
+                        count++;
+                        Log.d(TAG, count + "  " + query);
                     }
 
                     DbSingleton dbSingleton = DbSingleton.getInstance();
@@ -47,12 +60,16 @@ public class SessionListResponseProcessor implements Callback<SessionResponseLis
 
             });
         } else {
+            Log.d(TAG,"run not ");
+
             OpenEventApp.getEventBus().post(new SessionDownloadEvent(false));
         }
     }
 
     @Override
     public void onFailure(Call<SessionResponseList> call, Throwable t) {
+        Log.d(TAG,t.getMessage());
+
         OpenEventApp.getEventBus().post(new SessionDownloadEvent(false));
     }
 }

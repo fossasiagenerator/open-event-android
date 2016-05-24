@@ -32,12 +32,17 @@ public class SpeakerListResponseProcessor implements Callback<SpeakerResponseLis
                 @Override
                 public void run() {
                     ArrayList<String> queries = new ArrayList<String>();
+                    Log.d(TAG, "for ");
 
                     for (Speaker speaker : response.body().speakers) {
-                        for (int i = 0; i < speaker.getSession().length; i++) {
-                            SessionSpeakersMapping sessionSpeakersMapping = new SessionSpeakersMapping(speaker.getSession()[i], speaker.getId());
-                            String query_ss = sessionSpeakersMapping.generateSql();
-                            queries.add(query_ss);
+                        Log.d(TAG, "for ");
+                        if (speaker.getSession() != null) {
+
+                            for (int i = 0; i < speaker.getSession().length; i++) {
+                                SessionSpeakersMapping sessionSpeakersMapping = new SessionSpeakersMapping(speaker.getSession()[i], speaker.getId());
+                                String query_ss = sessionSpeakersMapping.generateSql();
+                                queries.add(query_ss);
+                            }
                         }
                         String query = speaker.generateSql();
                         queries.add(query);
