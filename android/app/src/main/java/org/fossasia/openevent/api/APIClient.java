@@ -1,5 +1,7 @@
 package org.fossasia.openevent.api;
 
+import android.util.Log;
+
 import org.fossasia.openevent.api.network.OpenEventAPI;
 
 import java.util.concurrent.TimeUnit;
@@ -33,7 +35,7 @@ public final class APIClient {
                 .addInterceptor(new HttpLoggingInterceptor().
                         setLevel(HttpLoggingInterceptor.Level.BASIC))
                 .build();
-
+        Log.d("API", Urls.BASE_URL);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Urls.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
