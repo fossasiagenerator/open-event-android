@@ -76,7 +76,10 @@ height="200px">
       var obj = {};
       for (var a = 0; a < ary.length; a++) obj[ary[a].name] = ary[a].value;
       console.log("JSON",obj);
-      return obj;
-      localStorage.setItem("json", obj);
+      var url = 'data:text/json;charset=utf8,' + encodeURIComponent(JSON.stringify(obj));
+      window.open(url, '_blank');
+      window.focus();
+      // return obj;
+      // localStorage.setItem("json", obj);
     });
 </script>
