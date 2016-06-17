@@ -49,12 +49,13 @@ Server Setup
    
    You can do this by typing the following command ```sudo visudo``` and hitting enter <br>
    Next scroll to the bottom of the file and add ```www-data ALL = NOPASSWD: /var/www/html/runPy.php```
-6. Create a [firebase account](firebase.google.com) and add your API key to index.html
+6. Create a [firebase account](firebase.google.com) and add your API key to index.html ,br>
+
    Navigate to your Account and then create a new project (Name it whatever you want) <br>
    Open this newly created project and click the Pink colored button saying *"Add Firebase to your web app"* <br>
    Copy the code listed there and paste it to [index.html](https://github.com/fossasia/open-event-android/blob/master/apk-generator/index.html#L76)
    Also add your server's IP address to trusted sources in the [Firebase console](https://console.firebase.google.com/project/app-generator/authentication/providers) by clicking on *Add Domain*  
-6. Everything is set up perfectly fine, refer to the next section to get a hang about the working of the server and see it in action.
+7. Everything is set up perfectly fine, refer to the next section to get a hang about the working of the server and see it in action.
 
 Working Principle 
 ======
