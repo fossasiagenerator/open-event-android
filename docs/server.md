@@ -49,7 +49,7 @@ Server Setup
    
    You can do this by typing the following command ```sudo visudo``` and hitting enter <br>
    Next scroll to the bottom of the file and add ```www-data ALL = NOPASSWD: /var/www/html/runPy.php```
-6. Create a [firebase account](firebase.google.com) and add your API key to index.html ,br>
+6. Create a [firebase account](firebase.google.com) and add your API key to index.html <br>
 
    Navigate to your Account and then create a new project (Name it whatever you want) <br>
    Open this newly created project and click the Pink colored button saying *"Add Firebase to your web app"* <br>
