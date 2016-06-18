@@ -1,3 +1,5 @@
+#[Open Event Android App Generator](http://192.241.232.231)
+
 Glosarry
 ======
 | Term        | Meaning           |
@@ -69,6 +71,14 @@ These details include :
 The Generator is hosted on a server and is backed up by PHP script which in turn executes python and Bash scripts which start the app's build process. <br>
 After the app is generated,it is emailed to the user using [Mutt](http://www.mutt.org/) and [MSMTP](http://msmtp.sourceforge.net/) <br>
 
-See it in Action
+Screenshots
 ======
-http://192.241.232.231
+
+**Server's Landing Page** <br>
+![image](http://i.imgur.com/tuP47wE.png) <br>
+
+**Firebase Data Storage model** <br>
+![image](http://i.imgur.com/jGVuOxS.png)
+
+**Received email with the compiled app**
+![image](http://i.imgur.com/ONrOrtk.png)
